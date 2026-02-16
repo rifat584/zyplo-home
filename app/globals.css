@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 24 24 27;
+}
+
+.dark {
+  --background: 9 9 11;
+  --foreground: 244 244 245;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.glass {
+  @apply border border-zinc-200/70 bg-white/70 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-900/70;
+}
+
+@keyframes logo-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: logo-marquee-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
